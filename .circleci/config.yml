@@ -9,6 +9,7 @@ jobs:
       - checkout
       - node/with-cache:
           steps:
+            - run: echo "//registry.npmjs.org/:_authToken=$NPMTOKEN" > ~/.npmrc
             - run: npm publish
 workflows:
     build-and-test:
