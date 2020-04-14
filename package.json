@@ -6,6 +6,20 @@
     "name": "folderpath",
     "description": "Build path from folder parents"
   },
-  "dependencies": [],
-  "devDependencies": []
+  "dependencies": {},
+  "devDependencies": {},
+  "description": "Folder path pugin.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thepeshka/insomnia-plugin-folderpath.git"
+  },
+  "author": "peshka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thepeshka/insomnia-plugin-folderpath/issues"
+  },
+  "homepage": "https://github.com/thepeshka/insomnia-plugin-folderpath#readme"
 }
