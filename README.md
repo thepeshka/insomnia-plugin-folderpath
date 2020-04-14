@@ -1,3 +1,3 @@
 # insomnia-plugin-folderpath
 
-Folder path pugin.
+Folder path plugin.
