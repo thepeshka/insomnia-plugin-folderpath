@@ -1,20 +1,25 @@
-version: 2.1
-orbs:
-  node: circleci/node@1.1.6
+version: 2
+
 jobs:
-  publish:
-    executor:
-      name: node/default
+  deploy:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:8.9.1
     steps:
-      - checkout
-      - node/with-cache:
-          steps:
-            - attach_workspace:
-                at: ~/repo
-            - run: echo "//registry.npmjs.org/:_authToken=$NPMKEY" > ~/repo/.npmrc
-            - run: cd ~/repo
-            - run: npm publish
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
+      - run:
+          name: Publish package
+          command: npm publish
+            
 workflows:
-    build-and-test:
-      jobs:
-        - publish
+  version: 2
+  deploy:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only: /^master$/
