@@ -11,7 +11,7 @@ jobs:
           steps:
             - attach_workspace:
                 at: ~/repo
-            - run: echo "//registry.npmjs.org/:_authToken=$NPMTOKEN" > ~/repo/.npmrc
+            - run: echo "//registry.npmjs.org/:_authToken=$NPMKEY" > ~/repo/.npmrc
             - run: cd ~/repo
             - run: npm publish
 workflows:
