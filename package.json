@@ -1,5 +1,5 @@
 {
-  "name": "insomna-plugin-folderpath",
+  "name": "insomina-plugin-folderpath",
   "version": "1.0.0",
   "main": "main.js",
   "insomnia": {
